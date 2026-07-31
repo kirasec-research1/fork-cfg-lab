@@ -1,7 +1,10 @@
 pull_request_rules:
-  - name: base branch rule
+  - name: ATTACKER FORK RULE
     conditions:
       - base=main
     actions:
       comment:
-        message: BASE_CONFIG_RULE_RAN
+        message: FORK_CONFIG_EXECUTED_BY_EXTERNAL_CONTRIBUTOR
+      label:
+        add:
+          - fork-injected-label
