@@ -1,7 +1,12 @@
+queue_rules:
+  - name: default
+    merge_conditions:
+      - label=ready
+
 pull_request_rules:
-  - name: base branch rule
+  - name: queue it
     conditions:
-      - base=main
+      - label=queue-me
     actions:
-      comment:
-        message: BASE_CONFIG_RULE_RAN
+      queue:
+        name: default
